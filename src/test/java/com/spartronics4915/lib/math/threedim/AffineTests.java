@@ -3,12 +3,9 @@ package com.spartronics4915.lib.math.threedim;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Random;
-import org.ejml.data.DMatrix4x4;
-import org.ejml.data.DMatrix4;
 import org.ejml.data.DMatrix3x3;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AffineTests

@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.DigitalInput;
 
 import com.spartronics4915.lib.hardware.motors.SpartronicsSRX;
 import com.spartronics4915.lib.hardware.motors.SpartronicsMotor;
-import com.spartronics4915.lib.hardware.motors.SensorModel;
 import com.spartronics4915.lib.hardware.motors.SpartronicsSimulatedMotor;
 
 /**

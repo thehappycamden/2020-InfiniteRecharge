@@ -19,10 +19,6 @@ import com.spartronics4915.lib.util.Units;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.opencv.core.Mat;
-
-import edu.wpi.cscore.CameraServerJNI;
-import edu.wpi.first.wpilibj.Timer;
 
 public class TestObjectFinder
 {

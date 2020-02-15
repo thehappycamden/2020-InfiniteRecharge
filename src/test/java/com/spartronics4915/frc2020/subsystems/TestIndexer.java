@@ -1,9 +1,7 @@
 package com.spartronics4915.frc2020.subsystems;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import com.spartronics4915.frc2020.Constants;
 import com.spartronics4915.frc2020.commands.IndexerCommands;
-import com.spartronics4915.lib.hardware.motors.SpartronicsSimulatedMotor;
 import org.junit.jupiter.api.Test;
 import edu.wpi.first.hal.sim.DriverStationSim;
 
@@ -31,8 +29,8 @@ public class TestIndexer
 
         var loadToLauncher = mCommands.new LoadToLauncher(sIndexer);
         /******Defining Motors******/
-        var simmedLoaderMotor = SpartronicsSimulatedMotor.getFromId(Constants.Indexer.Loader.kMotorId);
-        var simmedIndexerMotor = SpartronicsSimulatedMotor.getFromId(Constants.Indexer.Spinner.kMotorId);
+        // var simmedLoaderMotor = SpartronicsSimulatedMotor.getFromId(Constants.Indexer.Loader.kMotorId);
+        // var simmedIndexerMotor = SpartronicsSimulatedMotor.getFromId(Constants.Indexer.Spinner.kMotorId);
 
         // var sim = new DriverStationSim();
         // sim.setAutonomous(false);

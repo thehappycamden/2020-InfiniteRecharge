@@ -2,10 +2,7 @@ package com.spartronics4915.frc2020.subsystems;
 
 import com.spartronics4915.frc2020.Constants;
 import com.spartronics4915.lib.hardware.motors.SensorModel;
-import com.spartronics4915.lib.hardware.motors.SpartronicsMax;
-import com.spartronics4915.lib.hardware.motors.SpartronicsMotor;
 import com.spartronics4915.lib.hardware.motors.SpartronicsSRX;
-import com.spartronics4915.lib.hardware.sensors.SpartronicsPigeon;
 import com.spartronics4915.lib.hardware.sensors.SpartronicsXRS450;
 import com.spartronics4915.lib.math.twodim.physics.DCMotorTransmission;
 import com.spartronics4915.lib.math.twodim.physics.DifferentialDrive;

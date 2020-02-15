@@ -55,7 +55,7 @@ public final class Constants
             public static final double kPositionP = 1;
             public static final double kPositionD = 1;
             public static final double kConversionRatio = 1;
-            public static final double kSpeed = 1;
+            public static final double kSpeed = 30;
         }
         public static final class Transfer
         {

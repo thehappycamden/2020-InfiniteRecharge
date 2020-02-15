@@ -4,7 +4,6 @@ import com.spartronics4915.lib.util.Logger;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
 
 import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The subsystem that controls the LED.

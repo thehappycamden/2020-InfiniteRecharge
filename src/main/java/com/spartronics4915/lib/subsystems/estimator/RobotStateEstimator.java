@@ -58,7 +58,8 @@ public class RobotStateEstimator extends SpartronicsSubsystem
         }
 
         // Run this at 100 Hz
-        new Notifier(this::run).startPeriodic(1 / 100.0);
+        var name = new Notifier(this::run);
+        name.startPeriodic(1 / 100.0);
     }
 
     public RobotStateMap getEncoderRobotStateMap()
