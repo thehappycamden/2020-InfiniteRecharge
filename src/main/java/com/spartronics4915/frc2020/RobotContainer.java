@@ -133,7 +133,7 @@ public class RobotContainer
         mLauncher.setDefaultCommand(mLauncherCommands.new ShootBallTest(mLauncher));//mLauncherCommands.new TargetAndShoot(mLauncher));
         mPanelRotator.setDefaultCommand(mPanelRotatorCommands.new Stop(mPanelRotator));
         mDrive.setDefaultCommand(new TeleOpCommand(mDrive, mJoystick));
-        mIndexer.setDefaultCommand(mIndexerCommands.new EndKicker(mIndexer));
+        mIndexer.setDefaultCommand(mIndexerCommands.new KillIndexerParallel(mIndexer));
 
         // mLauncherCommands.new Zero(mLauncher).schedule();
         configureJoystickBindings();
@@ -220,7 +220,7 @@ public class RobotContainer
         // new JoystickButton(mButtonBoard, 1).toggleWhenPressed(new
         // ConditionalCommand(mLauncherCommands.new Target));
 
-        new JoystickButton(mButtonBoard, 2).toggleWhenPressed(mSuperstructureCommands.new IntakeRace(mIndexer, mIntake));
+        new JoystickButton(mButtonBoard, 2).toggleWhenPressed(mSuperstructureCommands.new Intake5Race(mIndexer, mIntake));
         new JoystickButton(mButtonBoard, 3).toggleWhenPressed(mIntakeCommands.new Eject(mIntake));
 
         new JoystickButton(mButtonBoard, 4).whileHeld(mClimberCommands.new Retract(mClimber));

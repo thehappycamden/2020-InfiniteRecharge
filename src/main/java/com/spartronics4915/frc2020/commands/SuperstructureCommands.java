@@ -34,14 +34,25 @@ public class SuperstructureCommands
         }
     }
 
-    public class IntakeRace extends ParallelRaceGroup
+    public class Intake5Race extends ParallelRaceGroup
     {
-        public IntakeRace(Indexer indexer, Intake intake)
+        public Intake5Race(Indexer indexer, Intake intake)
         {
             addCommands(
                 mIntakeCommands.new Harvest(intake),
                 mIndexerCommands.new LoadFromIntake(indexer)
             );
         }
-    }    
+    }
+    
+    public class Intake1Race extends ParallelRaceGroup
+    {
+        public Intake1Race(Indexer indexer, Intake intake)
+        {
+            addCommands(
+                mIntakeCommands.new Harvest(intake),
+                mIndexerCommands.new LoadFromIntake(indexer, 1)
+            );
+        }
+    }
 }
