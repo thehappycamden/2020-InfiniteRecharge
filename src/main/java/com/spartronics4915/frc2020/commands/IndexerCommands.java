@@ -331,4 +331,15 @@ public class IndexerCommands
             this(indexer, 5);
         }
     }
+
+    public class KillIndexerParallel extends ParallelCommandGroup
+    {
+        public KillIndexerParallel(Indexer indexer)
+        {
+            addCommands(
+                new EndKicker(indexer),
+                new EndTransfer(indexer)
+            );
+        }
+    }
 }

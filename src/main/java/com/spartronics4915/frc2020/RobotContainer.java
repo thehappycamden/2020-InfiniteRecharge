@@ -133,6 +133,7 @@ public class RobotContainer
         mLauncher.setDefaultCommand(mLauncherCommands.new ShootBallTest(mLauncher));//mLauncherCommands.new TargetAndShoot(mLauncher));
         mPanelRotator.setDefaultCommand(mPanelRotatorCommands.new Stop(mPanelRotator));
         mDrive.setDefaultCommand(new TeleOpCommand(mDrive, mJoystick));
+        mIndexer.setDefaultCommand(mIndexerCommands.new EndKicker(mIndexer));
 
         // mLauncherCommands.new Zero(mLauncher).schedule();
         configureJoystickBindings();

@@ -214,6 +214,7 @@ public class Indexer extends SpartronicsSubsystem
     {
         mKickerMotor.setNeutral();
         mIndexerMotor.setNeutral();
+        mTransferMotor.setNeutral();
     }
 
     /**
@@ -258,6 +259,7 @@ public class Indexer extends SpartronicsSubsystem
     @Override
     public void periodic()
     {
+
         dashboardPutNumber("targetPosition", mTargetPosition);
         dashboardPutNumber("position", mIndexerMotor.getEncoder().getPosition());
         dashboardPutNumber("ballsHeld", mBallsHeld);

@@ -43,6 +43,5 @@ public class SuperstructureCommands
                 mIndexerCommands.new LoadFromIntake(indexer)
             );
         }
-    }
-
+    }    
 }
