@@ -51,7 +51,7 @@ public class SuperstructureCommands
         {
             addCommands(
                 mIntakeCommands.new Harvest(intake),
-                mIndexerCommands.new LoadFromIntake(indexer, 1)
+                mIndexerCommands.new LoadFromIntake(indexer)
             );
         }
     }
