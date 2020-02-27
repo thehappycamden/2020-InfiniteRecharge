@@ -1,57 +1,59 @@
 package com.spartronics4915.frc2020.commands;
 
-import com.spartronics4915.frc2020.subsystems.Indexer;
-import com.spartronics4915.frc2020.subsystems.Intake;
-import com.spartronics4915.frc2020.subsystems.Launcher;
-import com.spartronics4915.lib.math.twodim.geometry.Pose2d;
-import com.spartronics4915.lib.subsystems.estimator.RobotStateMap;
-
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.ParallelRaceGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
 public class SuperstructureCommands
 {
-    public IndexerCommands mIndexerCommands;
-    public IntakeCommands mIntakeCommands;
-    public LauncherCommands mLauncherCommands;
+    private IndexerCommands mIndexerCommands;
+    private IntakeCommands mIntakeCommands;
+    private LauncherCommands mLauncherCommands;
 
-    public SuperstructureCommands(RobotStateMap stateMap, Pose2d targetPose)
+    public SuperstructureCommands(IndexerCommands indexerCommands,
+        IntakeCommands intakeCommands, LauncherCommands launcherCommands)
     {
-        mIndexerCommands = new IndexerCommands();
-        mIntakeCommands = new IntakeCommands();
-        mLauncherCommands = new LauncherCommands(stateMap, targetPose);
+        mLauncherCommands = launcherCommands;
+        mIntakeCommands = intakeCommands;
+        mIndexerCommands = indexerCommands;
     }
 
     public class LaunchSequence extends SequentialCommandGroup
     {
-        public LaunchSequence(Indexer indexer, Launcher launcher)
+        public LaunchSequence(int ballsToShoot)
         {
             addCommands(
-                mLauncherCommands.new WaitForFlywheel(launcher),
-                mIndexerCommands.new LoadToLauncher(indexer)
+                mLauncherCommands.new WaitForFlywheel(),
+                mIndexerCommands.new LoadToLauncher(ballsToShoot));
+        }
+        /** XXX: should this shoot > 1? */
+        public LaunchSequence()
+        {
+            this(1);
+        }
+    }
+
+    public class Intake extends ParallelCommandGroup
+    {
+        public Intake()
+        {
+            addCommands(
+                mIntakeCommands.new Harvest(),
+                mIndexerCommands.new LoadFromIntake()
             );
         }
     }
 
-    public class Intake5Race extends ParallelRaceGroup
+    public class IntakeFive extends SequentialCommandGroup
     {
-        public Intake5Race(Indexer indexer, Intake intake)
+        public IntakeFive()
         {
             addCommands(
-                mIntakeCommands.new Harvest(intake),
-                mIndexerCommands.new LoadFromIntake(indexer)
-            );
-        }
-    }
-    
-    public class Intake1Race extends ParallelRaceGroup
-    {
-        public Intake1Race(Indexer indexer, Intake intake)
-        {
-            addCommands(
-                mIntakeCommands.new Harvest(intake),
-                mIndexerCommands.new LoadFromIntake(indexer)
+                new Intake(),
+                new Intake(),
+                new Intake(),
+                new Intake(),
+                new Intake()
             );
         }
     }
